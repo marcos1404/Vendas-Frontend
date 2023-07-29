@@ -1,10 +1,14 @@
 import './App.css';
 
+import styled from 'styled-components';
+
 import { useState } from 'react';
 
 import viteLogo from '/vite.svg';
 
 import reactLogo from './assets/react.svg';
+
+import { Button, Space } from 'antd';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,15 +24,20 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+      <StyledLink className="card">
+        <Button type="dashed" onClick={() => setCount((count) => count + 1)}>count is {count}</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-      </div>
+      </StyledLink>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
+
+const StyledLink = styled.div`
+  color: #BF4F74;
+  font-weight: bold;
+`;
 
 export default App;
